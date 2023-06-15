@@ -15,15 +15,12 @@
   * For working with Firebase Analytics: In file build.gradle under app directory:
      buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
         debug {
             minifyEnabled false
             debuggable true
             manifestPlaceholders = [
-    
                     debugFirebaseAnalytics: "true"
             ]
         }
