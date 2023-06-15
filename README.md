@@ -13,18 +13,18 @@
             </intent-filter>
 
   * For working with Firebase Analytics: In file build.gradle under app directory:
-     buildTypes {
-        release {
-            signingConfig signingConfigs.debug
-        }
-        debug {
-            minifyEnabled false
-            debuggable true
-            manifestPlaceholders = [
-                    debugFirebaseAnalytics: "true"
-            ]
-        }
-    }
+  * ```gradle
+buildTypes {
+release {
+signingConfig signingConfigs.debug
+}
+debug {
+minifyEnabled false
+debuggable true
+manifestPlaceholders = [ debugFirebaseAnalytics: "true" ]
+}
+}
+```
   * Command for setting project name(need to have the same project name in Project Setting of Firebase and in AndroidManifest.xml):
   adb shell setprop debug.firebase.analytics.app name_project_name
 
