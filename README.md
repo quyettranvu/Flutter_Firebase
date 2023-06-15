@@ -1,16 +1,33 @@
-# firebase_learning
+# LEARNING SOME SERVICES FOR WORKING WITH FIREBASE ON FLUTTER #
+  * Firebase Firestore(Firebase Database)
+  * Firebase Authentication
+  * Firebase Storage
+  * Firebase Messaging
+  * Firebase Analytics(DebugView)
 
-A new Flutter project.
+## Besides the default settings for working with Firebase on Android, 
+  * For working with Firebase Messaging: In file AndroidManifest.xml:
+            <intent-filter>
+                <action android:name="FLUTTER_NOTIFICATION_CLICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
 
-## Getting Started
+  * For working with Firebase Analytics: In file build.gradle under app directory:
+     buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            manifestPlaceholders = [
+    
+                    debugFirebaseAnalytics: "true"
+            ]
+        }
+    }
+  * Command for setting project name(need to have the same project name in Project Setting of Firebase and in AndroidManifest.xml):
+  adb shell setprop debug.firebase.analytics.app name_project_name
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
