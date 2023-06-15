@@ -7,10 +7,12 @@
 
 ## Besides the default settings for working with Firebase on Android, 
   * For working with Firebase Messaging: In file AndroidManifest.xml:
-            <intent-filter>
-                <action android:name="FLUTTER_NOTIFICATION_CLICK" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+    ```
+    <intent-filter>
+      <action android:name="FLUTTER_NOTIFICATION_CLICK" />
+      <category android:name="android.intent.category.DEFAULT" />
+    </intent-filter>
+    ```
 
   * For working with Firebase Analytics: In file build.gradle under app directory:
      ```
